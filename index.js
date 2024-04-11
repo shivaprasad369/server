@@ -83,7 +83,7 @@ const startServer=()=>{
     try {
         // mongoose.connect(process.env.MONGODB_URL).then(()=>console.log("db connected"))
         connectDb(process.env.MONGODB_URL)
-        app.listen('https://server-442v.onrender.com/',()=>console.log('server is running'))
+        app.listen(8888,()=>console.log('server is running'))
         
     } catch (error) {
         console.log(error)
