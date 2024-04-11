@@ -5,6 +5,15 @@ import connectDb from './mogodb/connect.js';
 import mongoose from 'mongoose';
 import AboutRouter from './routers/About.js';
 import BlogRouter from './routers/Blog.js';
+import ServiceRouter from './routers/Service.js';
+import CoupleRouter from './routers/Couple.js';
+import OwnerRouter from './routers/Owners.js';
+import ServicesRouter from './routers/Services.js';
+
+import WhyRouter from './routers/Why.js';
+import GalleryRouter from './routers/Gallery.js';
+
+
 // import DalleRoutes from '../routes/dalle.js';
 dotenv.config();
 
@@ -20,7 +29,14 @@ const About1=new mongoose.Schema({
 })
 const AboutSchema=mongoose.model('About',About1)
 app.use('/api/about',AboutRouter)
+app.use('/api/couple',CoupleRouter)
+app.use('/api/service',ServiceRouter)
 app.use('/api/blog',BlogRouter)
+app.use('/api/owner',OwnerRouter)
+app.use('/api/services',ServicesRouter)
+app.use('/api/why',WhyRouter)
+app.use('/api/gallery',GalleryRouter)
+
 // app.use('/api/v1/dalle',DalleRoutes)
 
 // app.post('/about',async(req,res)=>{
